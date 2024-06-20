@@ -8,19 +8,18 @@ PrebuiltExchange3Google
 talkback
 Phonesky
 AndroidAutoStub
-GoogleRestore/GoogleRestore
+GoogleRestore
 GmsCore
 GmsSettingsProviderOverlay
 GmsOverlay
 GmsSetupWizardOverlay
 GoogleServicesFramework
-
 ```
 
 ### Directory Structure
 
 ```
-
+.
 ├── build.prop
 ├── META-INF
 │   └── com
@@ -91,5 +90,5 @@ GoogleServicesFramework
 │       └── priv-app
 │           └── GoogleServicesFramework
 │               └── GoogleServicesFramework.apk
-
+└── toybox
 ```
