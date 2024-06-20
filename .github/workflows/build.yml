@@ -21,6 +21,9 @@ jobs:
         rm -rf vendor_gapps/arm64/proprietary/system_ext/priv-app/SetupWizard
         rm -rf vendor_gapps/arm64/proprietary/product/priv-app/VelvetTitan
         rm -rf vendor_gapps/arm64/proprietary/product/priv-app/Velvet
+        rm -rf vendor_gapps/common/proprietary/product/priv-app/GooglePartnerSetup
+        rm -rf vendor_gapps/common/proprietary/product/priv-app/Wellbeing
+        rm -rf vendor_gapps/common/proprietary/system_ext/priv-app/GoogleFeedback
 
     - name: build arm64 variant
       run: |
