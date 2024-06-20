@@ -1,0 +1,43 @@
+name: MindTheGapps( Do not mind building it)
+
+on:
+  schedule:
+    - cron: '0 1 * * 0'
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: clone source
+      run: |
+        git clone https://gitlab.com/MindTheGapps/vendor_gapps --depth=1 -b upsilon
+        
+    - name: clean up
+      run: |
+        rm -rf vendor_gapps/arm64/proprietary/system_ext/priv-app/SetupWizard
+        rm -rf vendor_gapps/arm64/proprietary/product/priv-app/VelvetTitan
+        rm -rf vendor_gapps/arm64/proprietary/product/priv-app/Velvet
+
+    - name: build arm64 variant
+      run: |
+        cd vendor_gapps/
+        make gapps_arm64
+        
+    - name: Create Release Tag
+      run:  echo "ZIP_FILE_NAME=$(basename vendor_gapps/out/MindTheGapps-*.zip .zip)" >> $GITHUB_ENV
+
+    - name: upload to releases
+      uses: softprops/action-gh-release@v2
+      with:
+        files: |
+          vendor_gapps/out/MindTheGapps-*.zip
+        fail_on_unmatched_files: true
+        append_body: false
+        tag_name: ${{ env.ZIP_FILE_NAME }}
+        name: ${{ env.ZIP_FILE_NAME }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+
