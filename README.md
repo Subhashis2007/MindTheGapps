@@ -7,7 +7,6 @@ GoogleCalendarSyncAdapter
 PrebuiltExchange3Google
 talkback
 Phonesky
-AndroidAutoStub
 GoogleRestore
 GmsCore
 GmsSettingsProviderOverlay
@@ -75,8 +74,6 @@ GoogleServicesFramework
 │   │   │   ├── GmsSettingsProviderOverlay.apk
 │   │   │   └── GmsSetupWizardOverlay.apk
 │   │   └── priv-app
-│   │       ├── AndroidAutoStub
-│   │       │   └── AndroidAutoStub.apk
 │   │       ├── GmsCore
 │   │       │   └── GmsCore.apk
 │   │       ├── GoogleRestore
