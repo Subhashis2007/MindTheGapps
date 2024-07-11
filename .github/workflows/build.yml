@@ -24,6 +24,7 @@ jobs:
         rm -rf vendor_gapps/common/proprietary/product/priv-app/GooglePartnerSetup
         rm -rf vendor_gapps/common/proprietary/product/priv-app/Wellbeing
         rm -rf vendor_gapps/common/proprietary/system_ext/priv-app/GoogleFeedback
+        rm -rf vendor_gapps/common/proprietary/product/priv-app/AndroidAutoStub
 
     - name: build arm64 variant
       run: |
